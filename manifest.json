@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "Mapzen",
+  "description": "Locates an address using Mapzen's Tangram and Search",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon48.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "activeTab",
+    "unlimitedStorage",
+    "geolocation",
+    "contextMenus"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "162": "icon162.png"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+  "commands": {
+          "_execute_browser_action": {
+            "suggested_key": {
+              "windows": "Ctrl+9",
+              "mac": "MacCtrl+9"
+            }
+          }
+        }
+}
