@@ -19,6 +19,9 @@ window.onload = function () {
     fullWidth: 100,
   }).addTo(map);
 
+  var enterEvent = new KeyboardEvent("keydown", {
+    keycode: 13
+  });
   // var selectedText = window.getSelection().toString();
   // if (selectedText != "") {
     chrome.tabs.executeScript( {
@@ -26,6 +29,10 @@ window.onload = function () {
     }, function(selection) {
         geocoder._input.value = selection[0];
     });
+
+    var geocoder_box = document.getElementsByClassName("leaflet-control-zoom-in")[0];
+    geocoder_box.click();
+    enterEvent();
   // }
 
 // // Expands the search box upon loading page
