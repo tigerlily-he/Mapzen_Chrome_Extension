@@ -25,7 +25,10 @@ window.onload = function () {
         code: "window.getSelection().toString();"
     }, function(selection) {
         geocoder._input.value = selection[0];
+        geocoder.focus();
+        var search_icon = document.getElementsByClassName("leaflet-pelias-search-icon")[0];
+        search_icon.click();
+        geocoder.search(selection[0]);
     });
-  // }
 
-// // Expands the search box upon loading page
+  // }
