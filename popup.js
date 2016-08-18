@@ -19,20 +19,16 @@ window.onload = function () {
     fullWidth: 100,
   }).addTo(map);
 
-  var enterEvent = new KeyboardEvent("keydown", {
-    keycode: 13
-  });
   // var selectedText = window.getSelection().toString();
   // if (selectedText != "") {
     chrome.tabs.executeScript( {
         code: "window.getSelection().toString();"
     }, function(selection) {
         geocoder._input.value = selection[0];
+        geocoder.focus();
+        var search_icon = document.getElementsByClassName("leaflet-pelias-search-icon")[0];
+        search_icon.click();
+        geocoder.search(selection[0]);
     });
 
-    var geocoder_box = document.getElementsByClassName("leaflet-control-zoom-in")[0];
-    geocoder_box.click();
-    enterEvent();
   // }
-
-// // Expands the search box upon loading page
