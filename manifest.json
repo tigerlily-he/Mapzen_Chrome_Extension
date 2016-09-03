@@ -9,15 +9,10 @@
     "default_icon": "icon48.png",
     "default_popup": "popup.html"
   },
-  "background": {
-    "persistent": false,
-    "scripts": ["background.js"]
-  },
+  
   "permissions": [
     "activeTab",
-    "unlimitedStorage",
-    "geolocation",
-    "contextMenus"
+    "unlimitedStorage"
   ],
   "icons": {
     "16": "icon16.png",
@@ -29,7 +24,7 @@
   "commands": {
           "_execute_browser_action": {
             "suggested_key": {
-              "windows": "Ctrl+9",
+              "windows": "Ctrl+Shift+9",
               "mac": "MacCtrl+9"
             }
           }
